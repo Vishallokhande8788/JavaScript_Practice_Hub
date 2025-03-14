@@ -41,3 +41,30 @@ function multiplier(factor) {
   const double = multiplier(2);
   console.log(double(5)); // 10
   
+
+//   Fixing Loop Issues – Solving Closure Problems with let:
+// Problem: Using var in loops creates closure issues because it does not have block scope.
+// Solution: Use let to capture the correct value in each iteration.
+// Example:
+
+for (let i = 1; i <= 3; i++) {
+    setTimeout(() => console.log(i), 1000 * i);
+  }
+  // Output: 1, 2, 3 (after 1s, 2s, 3s)
+
+  
+//   IIFE – Creating Modules Using Closures:
+//   How it works: Immediately Invoked Function Expressions (IIFE) execute as soon as they are defined, useful for module creation.
+//   Example:
+
+const user = (function () {
+    let name = "Vishal";
+    return {
+      getName: () => name,
+      setName: (newName) => (name = newName),
+    };
+  })();
+  console.log(user.getName()); // Vishal
+  user.setName("Lokhande");
+  console.log(user.getName()); // Lokhande
+  
