@@ -1,0 +1,97 @@
+//  sum of all numbers from 0 to 9
+
+// sum = 0
+// for (i=0 ; i < 10 ; i++){
+//     sum += i+1
+//     console.log(sum)
+
+// }
+
+// //  write a program for factorial of 4 using for loop
+// pu = 0;
+// for (i = 0; i < 4; i++) {
+//   pu = pu * i;
+//   console.log(pu);
+// }
+// let obj = {
+//   name: "ChakX",
+//   age: 25,
+//   gender: "Male",
+//   hobbies: ["Coding", "Reading"],
+// };
+
+// for (let key in obj) {
+//   console.log("marks of " + key + "  is + " + obj[key]);
+// }
+
+// function avrg(x, y) {
+//   return (x + y) / 2;
+// }
+
+// console.log(avrg(10, 20));
+
+// obj = {
+//   harry: 90,
+//   sally: 80,
+//   bob: 70,
+//   joe: 60,
+// };
+
+// for (let key in obj) {
+//   if (obj[key] > 60) {
+//     console.log(key + " is greater than 60");
+//   }
+// }
+// CorrectNo = 15;
+// let i
+// while(i != CorrectNo){
+//     i = prompt("enter a no")
+//     console.log("Wrong no")
+// }
+// console.log("correct no ")
+
+// function mean(a,b,c,d,e){
+//     return(a+b+c+d+e)/5
+// }
+// console.log(mean(1,2,3,4,5))
+// console.log(mean(10,20,30,40,50))
+
+// let vl = "vishal lokhande";
+// console.log(vl.length);
+
+
+// practice calculator 
+
+function calculate(num1, num2, operator) {
+  if (operator === '+') {
+    return num1 + num2;
+  } else if (operator === '-') {
+    return num1 - num2;
+  } else if (operator === '*') {
+    return num1 * num2;
+  } else if (operator === '/') {
+    if (num2 === 0) {
+      return "Cannot divide by zero!";
+    }
+    return num1 / num2;
+  } else {
+    return "Invalid operator!";
+  }
+}
+
+let run = true;
+
+while (run) {
+  let num1 = parseFloat(prompt("Enter first number:"));
+  let num2 = parseFloat(prompt("Enter second number:"));
+  let operator = prompt("Enter operator (+, -, *, /):");
+
+  let result = calculate(num1, num2, operator);
+  alert("Result: " + result);
+
+  let again = prompt("Do you want to calculate again? (yes/no):");
+  if (again.toLowerCase() !== "yes") {
+    run = false;
+    alert("Calculator stopped.");
+  }
+}
