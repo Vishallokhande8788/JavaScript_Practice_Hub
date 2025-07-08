@@ -95,3 +95,52 @@ while (run) {
     alert("Calculator stopped.");
   }
 }
+
+const readline = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+const questions = [
+  {
+    question: "Q1: What is the capital of India?\nA: Mumbai\nB: Delhi\nC: Kolkata\nD: Chennai",
+    answer: "B"
+  },
+  {
+    question: "Q2: Who is the CEO of Tesla?\nA: Bill Gates\nB: Elon Musk\nC: Jeff Bezos\nD: Sundar Pichai",
+    answer: "B"
+  },
+  {
+    question: "Q3: What does HTML stand for?\nA: Hyperlinks and Text Markup Language\nB: Home Tool Markup Language\nC: Hyper Text Markup Language\nD: Hyper Tool Multi Language",
+    answer: "C"
+  }
+];
+
+let score = 0;
+let index = 0;
+
+function askQuestion() {
+  if (index < questions.length) {
+    readline.question(`${questions[index].question}\nYour Answer: `, (userInput) => {
+      if (userInput.toUpperCase() === questions[index].answer) {
+        console.log("✅ Correct!\n");
+        score += 10000;
+      } else {
+        console.log("❌ Wrong answer. Game Over!");
+        console.log(`💰 You won ₹${score}`);
+        readline.close();
+        return;
+      }
+      index++;
+      askQuestion();
+    });
+  } else {
+    console.log("🎉 Congratulations! You've answered all questions!");
+    console.log(`💰 Total Winning Amount: ₹${score}`);
+    readline.close();
+  }
+}
+
+console.log("🎬 Welcome to 'Kaun Banega Crorepati' 💸");
+askQuestion();
+
