@@ -1,7 +1,7 @@
 //  sum of all numbers from 0 to 9
 
 // sum = 0
-// for (i=0 ; i < 10 ; i++){
+// for (i=0 ; i < 10 ; i++){ c c
 //     sum += i+1
 //     console.log(sum)
 
