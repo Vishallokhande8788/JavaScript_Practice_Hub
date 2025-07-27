@@ -116,7 +116,7 @@ const matrix = [
   [7, 8, 9]
 ];
 
-for (const row of matrix) {
+htmlFor (const row of matrix) {
   console.log('Row:', row);
 }
 

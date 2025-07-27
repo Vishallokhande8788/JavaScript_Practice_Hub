@@ -14,7 +14,7 @@ function greet(name) {
 
 
 
-//   Data Privacy – Using Closures for Private Variables:
+//   Data Privacy – Using Closures htmlFor Private Variables:
 // How it works: Variables inside a function are not accessible directly from outside, ensuring privacy.
 // Example:
 function counter() {
@@ -47,14 +47,14 @@ function multiplier(factor) {
 // Solution: Use let to capture the correct value in each iteration.
 // Example:
 
-for (let i = 1; i <= 3; i++) {
+htmlFor (let i = 1; i <= 3; i++) {
     setTimeout(() => console.log(i), 1000 * i);
   }
   // Output: 1, 2, 3 (after 1s, 2s, 3s)
 
   
 //   IIFE – Creating Modules Using Closures:
-//   How it works: Immediately Invoked Function Expressions (IIFE) execute as soon as they are defined, useful for module creation.
+//   How it works: Immediately Invoked Function Expressions (IIFE) execute as soon as they are defined, useful htmlFor module creation.
 //   Example:
 
 const user = (function () {

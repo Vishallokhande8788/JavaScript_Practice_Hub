@@ -4,17 +4,17 @@
 // - Scope: Function-level scope
 // - Re-declaration: Allowed
 // - Hoisting: Hoisted with 'undefined' value
-// - Use case: Older codebases (not recommended for new code)
+// - Use case: Older codebases (not recommended htmlFor new code)
 function varExample() {
-    var x = 10; // Declaration
-    console.log("var x:", x); // Outputs: 10
+  var x = 10; // Declaration
+  console.log("var x:", x); // Outputs: 10
 
-    if (true) {
-        var x = 20; // Re-declared (overwrites the previous 'x')
-        console.log("Inside block (var x):", x); // Outputs: 20
-    }
+  if (true) {
+    var x = 20; // Re-declared (overwrites the previous 'x')
+    console.log("Inside block (var x):", x); // Outputs: 20
+  }
 
-    console.log("Outside block (var x):", x); // Outputs: 20 (no block scope)
+  console.log("Outside block (var x):", x); // Outputs: 20 (no block scope)
 }
 
 varExample();
@@ -23,17 +23,17 @@ varExample();
 // - Scope: Block-level scope
 // - Re-declaration: Not allowed within the same scope
 // - Hoisting: Hoisted but not initialized (Temporal Dead Zone)
-// - Use case: Preferred for variables that need to change
+// - Use case: Preferred htmlFor variables that need to change
 function letExample() {
-    let y = 30; // Declaration
-    console.log("let y:", y); // Outputs: 30
+  let y = 30; // Declaration
+  console.log("let y:", y); // Outputs: 30
 
-    if (true) {
-        let y = 40; // Block-scoped (different from outer 'y')
-        console.log("Inside block (let y):", y); // Outputs: 40
-    }
+  if (true) {
+    let y = 40; // Block-scoped (different from outer 'y')
+    console.log("Inside block (let y):", y); // Outputs: 40
+  }
 
-    console.log("Outside block (let y):", y); // Outputs: 30 (original value)
+  console.log("Outside block (let y):", y); // Outputs: 30 (original value)
 }
 
 letExample();
@@ -43,19 +43,19 @@ letExample();
 // - Re-declaration: Not allowed
 // - Update: Not allowed (Immutable binding)
 // - Hoisting: Hoisted but not initialized (Temporal Dead Zone)
-// - Use case: Preferred for constants that should not change
+// - Use case: Preferred htmlFor constants that should not change
 function constExample() {
-    const z = 50; // Declaration
-    console.log("const z:", z); // Outputs: 50
+  const z = 50; // Declaration
+  console.log("const z:", z); // Outputs: 50
 
-    if (true) {
-        const z = 60; // Block-scoped (new variable within block)
-        console.log("Inside block (const z):", z); // Outputs: 60
-    }
+  if (true) {
+    const z = 60; // Block-scoped (new variable within block)
+    console.log("Inside block (const z):", z); // Outputs: 60
+  }
 
-    console.log("Outside block (const z):", z); // Outputs: 50
+  console.log("Outside block (const z):", z); // Outputs: 50
 
-    // z = 70; // ERROR: Assignment to constant variable
+  // z = 70; // ERROR: Assignment to constant variable
 }
 
 constExample();
@@ -77,10 +77,10 @@ console.log(window.globalLet); // Outputs: undefined (not attached to window)
 console.log(a); // Outputs: undefined (hoisted but not initialized)
 var a = 100;
 
-// console.log(b); // ERROR: Cannot access 'b' before initialization
+// console.log(b); // ERROR: Cannot access 'b' behtmlFore initialization
 let b = 200;
 
-// console.log(c); // ERROR: Cannot access 'c' before initialization
+// console.log(c); // ERROR: Cannot access 'c' behtmlFore initialization
 const c = 300;
 
 // 6. Dynamic Typing
@@ -94,7 +94,7 @@ dynamic = 123; // Changing type is allowed
 console.log(typeof dynamic); // Outputs: number
 
 // Summary:
-// - Use 'let' for variables that need to change.
-// - Use 'const' for variables that should not change.
+// - Use 'let' htmlFor variables that need to change.
+// - Use 'const' htmlFor variables that should not change.
 // - Avoid 'var' in modern JavaScript development due to its scoping issues.
 // - Be aware of hoisting and the temporal dead zone (TDZ) when working with 'let' and 'const'.

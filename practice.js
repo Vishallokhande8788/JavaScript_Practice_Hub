@@ -1,15 +1,15 @@
 //  sum of all numbers from 0 to 9
 
 // sum = 0
-// for (i=0 ; i < 10 ; i++){ c c
+// htmlFor (i=0 ; i < 10 ; i++){ c c
 //     sum += i+1
 //     console.log(sum)
 
 // }
 
-// //  write a program for factorial of 4 using for loop
+// //  write a program htmlFor factorial of 4 using htmlFor loop
 // pu = 0;
-// for (i = 0; i < 4; i++) {
+// htmlFor (i = 0; i < 4; i++) {
 //   pu = pu * i;
 //   console.log(pu);
 // }
@@ -20,7 +20,7 @@
 //   hobbies: ["Coding", "Reading"],
 // };
 
-// for (let key in obj) {
+// htmlFor (let key in obj) {
 //   console.log("marks of " + key + "  is + " + obj[key]);
 // }
 
@@ -37,7 +37,7 @@
 //   joe: 60,
 // };
 
-// for (let key in obj) {
+// htmlFor (let key in obj) {
 //   if (obj[key] > 60) {
 //     console.log(key + " is greater than 60");
 //   }
@@ -59,17 +59,16 @@
 // let vl = "vishal lokhande";
 // console.log(vl.length);
 
-
-// practice calculator 
+// practice calculator
 
 function calculate(num1, num2, operator) {
-  if (operator === '+') {
+  if (operator === "+") {
     return num1 + num2;
-  } else if (operator === '-') {
+  } else if (operator === "-") {
     return num1 - num2;
-  } else if (operator === '*') {
+  } else if (operator === "*") {
     return num1 * num2;
-  } else if (operator === '/') {
+  } else if (operator === "/") {
     if (num2 === 0) {
       return "Cannot divide by zero!";
     }
@@ -96,24 +95,27 @@ while (run) {
   }
 }
 
-const readline = require('readline').createInterface({
+const readline = require("readline").createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 const questions = [
   {
-    question: "Q1: What is the capital of India?\nA: Mumbai\nB: Delhi\nC: Kolkata\nD: Chennai",
-    answer: "B"
+    question:
+      "Q1: What is the capital of India?\nA: Mumbai\nB: Delhi\nC: Kolkata\nD: Chennai",
+    answer: "B",
   },
   {
-    question: "Q2: Who is the CEO of Tesla?\nA: Bill Gates\nB: Elon Musk\nC: Jeff Bezos\nD: Sundar Pichai",
-    answer: "B"
+    question:
+      "Q2: Who is the CEO of Tesla?\nA: Bill Gates\nB: Elon Musk\nC: Jeff Bezos\nD: Sundar Pichai",
+    answer: "B",
   },
   {
-    question: "Q3: What does HTML stand for?\nA: Hyperlinks and Text Markup Language\nB: Home Tool Markup Language\nC: Hyper Text Markup Language\nD: Hyper Tool Multi Language",
-    answer: "C"
-  }
+    question:
+      "Q3: What does HTML stand htmlFor?\nA: Hyperlinks and Text Markup Language\nB: Home Tool Markup Language\nC: Hyper Text Markup Language\nD: Hyper Tool Multi Language",
+    answer: "C",
+  },
 ];
 
 let score = 0;
@@ -121,19 +123,22 @@ let index = 0;
 
 function askQuestion() {
   if (index < questions.length) {
-    readline.question(`${questions[index].question}\nYour Answer: `, (userInput) => {
-      if (userInput.toUpperCase() === questions[index].answer) {
-        console.log("✅ Correct!\n");
-        score += 10000;
-      } else {
-        console.log("❌ Wrong answer. Game Over!");
-        console.log(`💰 You won ₹${score}`);
-        readline.close();
-        return;
+    readline.question(
+      `${questions[index].question}\nYour Answer: `,
+      (userInput) => {
+        if (userInput.toUpperCase() === questions[index].answer) {
+          console.log("✅ Correct!\n");
+          score += 10000;
+        } else {
+          console.log("❌ Wrong answer. Game Over!");
+          console.log(`💰 You won ₹${score}`);
+          readline.close();
+          return;
+        }
+        index++;
+        askQuestion();
       }
-      index++;
-      askQuestion();
-    });
+    );
   } else {
     console.log("🎉 Congratulations! You've answered all questions!");
     console.log(`💰 Total Winning Amount: ₹${score}`);
@@ -143,4 +148,3 @@ function askQuestion() {
 
 console.log("🎬 Welcome to 'Kaun Banega Crorepati' 💸");
 askQuestion();
-
